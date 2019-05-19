@@ -1,0 +1,59 @@
+@import "../../global_variables";
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background: $light-green !important;
+}
+
+.ant-layout-content, .ant-layout-footer {
+  background: $light-gray !important;
+}
+
+header.ant-layout-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: $main-color;
+  height: auto;
+}
+
+.header__logo {
+  display: flex;
+  a {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 2rem;
+  }
+  a:hover {
+    color: $white;
+  }
+}
+
+.header__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.header__menu-item {
+  a {
+    display: flex;
+    padding: 0 1.5rem;
+    height: 100%;
+    color: $white;
+    opacity: .6;
+    transition: all .3s;
+    justify-content: center;
+    align-items: center;
+  }
+  a:hover {
+    color: $white;
+    opacity: 1;
+  }
+  a.selected {
+    background-color: $light-green;
+  }
+}

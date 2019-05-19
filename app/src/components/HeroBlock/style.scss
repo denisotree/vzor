@@ -1,0 +1,68 @@
+@import "../../global_variables";
+
+.hero__wrapper {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.hero__video-wrapper::before, .hero__image-wrapper::before {
+    display: block;
+    width: 100%;
+    padding-bottom: 30%;
+    content: "";
+}
+
+.hero__video-wrapper::after, .hero__image-wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.2);
+    transition: .5s;
+}
+
+.hero__image-wrapper {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover!important;
+}
+
+.hero__video-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero__title {
+  h1, h2 {
+    font-weight: 600;
+    color: $white;
+  }
+}

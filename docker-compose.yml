@@ -1,0 +1,44 @@
+version: '3.6'
+services:
+  web:
+    build: ./docker/nginx
+    container_name: web
+    volumes:
+      - ./app:/var/www/html
+    working_dir: /etc/nginx
+    links:
+      - python
+      - mysql
+    ports:
+      - 8000:80
+  python:
+    build: ./docker/python
+    container_name: python
+    volumes:
+      - ./app:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+  mysql:
+    build: ./docker/mysql
+    container_name: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - data-volume:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=vzor_db
+  frontend:
+    build: ./docker/frontend
+    container_name: frontend
+    volumes:
+      - ./app:/app
+      - node-modules:/app/node_modules
+    working_dir: /app
+    ports:
+      - 3000:3000
+
+volumes:
+  data-volume:
+  node-modules:

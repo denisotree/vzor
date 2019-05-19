@@ -1,0 +1,18 @@
+@import "../../global_variables";
+
+.author__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.author__avatar {
+  margin-bottom: 1rem!important;
+}
+
+.author__name {
+  color: $gray;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
