@@ -3,7 +3,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
-ALLOWED_HOSTS = ['188.166.63.131', '127.0.0.1', 'hqframe.cc', 'localhost']
+ALLOWED_HOSTS = ['68.183.194.115', '127.0.0.1', 'hqframe.cc', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -136,7 +136,7 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
-    '188.166.63.131:3000',
+    '68.183.194.115:3000',
     'hqframe.cc:3000',
     'localhost:5000'
 )
