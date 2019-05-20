@@ -50,7 +50,7 @@ export const getCurrentUserData = () => {
     return dispatch => {
         const currentUserName = localStorage.getItem('username');
         if (currentUserName) {
-            axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/authors/${currentUserName}/`)
+            axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/authors/${currentUserName}/`)
                 .then(res => {
                         const userData = res.data;
                         dispatch(authUpdate(userData));
@@ -63,7 +63,7 @@ export const getCurrentUserData = () => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post(`${window.location.protocol}//${window.location.hostname}:8000/rest-auth/login/`, {
+        axios.post(`${window.location.protocol}//${window.location.hostname}/rest-auth/login/`, {
             username: username,
             password: password
         })
@@ -87,7 +87,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, first_name, second_name, password1, password2, email, phone) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post(`${window.location.protocol}//${window.location.hostname}:8000/rest-auth/registration/`, {
+        axios.post(`${window.location.protocol}//${window.location.hostname}/rest-auth/registration/`, {
             username: username,
             email: email,
             phone: phone,

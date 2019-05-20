@@ -18,7 +18,7 @@ class CommonForm extends React.Component {
     };
 
     fetchCategory = () => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/category/`).then(res => {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/category/`).then(res => {
             this.setState({
                 category: res.data
             });
@@ -53,7 +53,7 @@ class CommonForm extends React.Component {
                     Authorization: `Token ${this.props.token}`,
                 };
                 console.log(postObj);
-                axios.post(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/video/create/`, postObj)
+                axios.post(`${window.location.protocol}//${window.location.hostname}/api/v1/video/create/`, postObj)
                     .then(res => {
                         console.log(res)
                     })

@@ -10,7 +10,7 @@ export const updateVideoData = videoData => {
 
 export const fetchVideos = (params) => {
     return dispatch => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/video/`, {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/video/`, {
             params: params
         })
             .then(res => {
@@ -21,7 +21,7 @@ export const fetchVideos = (params) => {
 
 export const fetchVideo = (video, params) => {
     return dispatch => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/video/${video}`, {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/video/${video}`, {
             params: params
         })
             .then(res => {

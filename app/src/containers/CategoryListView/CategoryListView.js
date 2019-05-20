@@ -9,7 +9,7 @@ class CategoryListView extends React.Component {
     };
 
     fetchCategory = () => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/category/`).then(res => {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/category/`).then(res => {
           this.setState({
             category: res.data
           });

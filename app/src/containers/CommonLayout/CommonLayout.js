@@ -17,7 +17,7 @@ class CommonLayout extends Component {
     };
 
     fetchMenu = () => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/pages/`).then(res => {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/pages/`).then(res => {
             this.setState({
                 pages: res.data
             });

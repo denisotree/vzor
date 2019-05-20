@@ -9,7 +9,7 @@ export default class AuthorListView extends React.Component {
     };
 
     fetchVideo = () => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/authors/`).then(res => {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/authors/`).then(res => {
             this.setState({
                 video: res.data
             });

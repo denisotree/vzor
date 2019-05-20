@@ -10,13 +10,13 @@ class CategoryDetail extends React.Component {
 
     fetchCategory = () => {
         const category = this.props.match.params.category;
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/category/${category}/`)
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/category/${category}/`)
             .then(res => {
                 this.setState({
                     category: res.data
                 });
                 const catID = res.data.id;
-                axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/video/`, {
+                axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/video/`, {
                     params: {
                         status: 'published',
                         category: catID

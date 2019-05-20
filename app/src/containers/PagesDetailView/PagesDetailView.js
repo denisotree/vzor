@@ -7,7 +7,7 @@ class PagesDetailView extends React.Component {
     };
 
     fetchPage = page => {
-        axios.get(`${window.location.protocol}//${window.location.hostname}:8000/api/v1/pages/${page}/`).then(res => {
+        axios.get(`${window.location.protocol}//${window.location.hostname}/api/v1/pages/${page}/`).then(res => {
             this.setState({
                 page: res.data
             });
